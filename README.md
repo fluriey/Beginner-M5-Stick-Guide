@@ -54,6 +54,74 @@ Bruce has more features than Nemo and overall is better in my opinion. Here is a
 
 To see more features or more details of the Features check out the Github of Bruce or Nemo (Detailed showcase coming soon!). If you want to know how to install the Firmware check out **Installation Guide**
 
+## ⚡Wiring Diagrams
+
+<details>
+   <summary>NRF24 / CC1011</summary>
+  
+  ![image](https://github.com/user-attachments/assets/8791d802-6040-4425-8f46-effc2582b12d)
+  
+</details>
+
+<details>
+   <summary>RFID2</summary>
+  
+  ![image](https://github.com/user-attachments/assets/e6a85b02-9222-4bfe-89ac-5cd9106d60b3)
+  
+</details>
+
+<details>
+   <summary>RFID2/RC522</summary>
+  
+![image](https://github.com/user-attachments/assets/67ab8513-52a0-4edd-b15a-4e66e56ed747)
+
+</details>
+
+<details>
+   <summary>IR Transmitter/Receiver </summary>
+  
+![image](https://github.com/user-attachments/assets/3dcb0aa6-c31f-4b21-a12d-bc83f498404a)
+
+![image](https://github.com/user-attachments/assets/ff334803-4460-4edf-aa63-6312cde1ad4e)
+
+</details>
+
+<details>
+   <summary>USB Module</summary>
+  
+![image](https://github.com/user-attachments/assets/30d13722-601f-4de0-93f8-3b7d2bb8c018)
+
+</details>
+
+<details>
+   <summary>NFC RFID</summary>
+  
+![image](https://github.com/user-attachments/assets/d6984f14-2ee3-4878-8190-e142147f308b)
+
+</details>
+
+<details>
+   <summary>SD Card Module</summary>
+  
+![image](https://github.com/user-attachments/assets/5aad954d-b8e1-41d2-b9b6-493b8e5075a2)
+
+</details>
+
+<details>
+   <summary>SD Card + NRF24</summary>
+  
+![image](https://github.com/user-attachments/assets/73f623a1-03a9-4070-903b-9bdaad3af783)
+
+</details>
+
+<details>
+   <summary>CC1011 + NRF24</summary>
+  
+![image](https://github.com/user-attachments/assets/25578c5d-4219-4071-953f-e9d0750057c2)
+
+</details>
+
+
 ## 🔧 Official M5stack Attachments
 
 - [**M5Stack FM Receiver**](https://www.aliexpress.us/item/3256803111064973.html?aff_fcid=b9d7840bfc0c450897368406859f5cdc-1734271698334-04109-_DdvzW8h&tt=CPS_NORMAL&aff_fsk=_DdvzW8h&aff_platform=shareComponent-detail&sk=_DdvzW8h&aff_trace_key=b9d7840bfc0c450897368406859f5cdc-1734271698334-04109-_DdvzW8h&terminal_id=ec4331db37424feaa5a63d422bee1666&afSmartRedirect=y&gatewayAdapt=glo2usa4itemAdapt) (Receive Different Signals, i.e. Receive Car key Signal **Warning! Educational Purpose Only!**)
