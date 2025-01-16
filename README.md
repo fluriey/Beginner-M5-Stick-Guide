@@ -52,9 +52,9 @@ Bruce has more features than Nemo and overall is better in my opinion. Here is a
 - ### 🛜 Wifi Portal (Save Email & Passwords - **Warning! Educational Purpose only!**)
 - ### 🕒 Clock
 
-To see more features or more details of the Features check out the Github of Bruce or Nemo (Detailed showcase coming soon!). If you want to know how to install the Firmware check out **Installation Guide**
-
-## ⚡Wiring Diagrams
+To see more features or more details of the Features check out the [**Bruce Detailed**](#-bruce-detailed) section. If you want to know how to install the Firmware check out [**Installation Guide**](#-installation-guide)
+      
+## ⚡ Wiring Diagrams
 
 <details>
    <summary>NRF24 / CC1011</summary>
@@ -121,35 +121,131 @@ To see more features or more details of the Features check out the Github of Bru
 
 </details>
 
+## 🎓 Bruce Detailed
+
+### Here I will explain every Option for the Bruce software!
+____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+- ### 🛜 WiFi
+    - ### Connect Wifi
+      Connect your M5Stick to your home Network or any Wifi in general
+    - ### WiFi AP
+      Use your M5Stick as an [Local AP](https://www.lifewire.com/wireless-access-point-816545). After enabling it will show up as Network, default password to it is `brucenet`
+    - ### WiFi Atks
+      - **Target Atks**
+        Scans for a WiFi APs to either get more information of it (MAC adress & channel), [Deauth](https://nordvpn.com/de/blog/deauthentication-attack/) (Kick people out of the wifi), Clone AP name and make an Evil Portal.
+        
+      - **Beacon Spam**
+        - **Funny SSID**
+          Creates Many Different [SSIDs](https://nordvpn.com/blog/what-is-ssid/) with funny names
+        - **Ricky Roll**
+          Creates SSIDs with [Lyrics](https://www.youtube.com/watch?v=dQw4w9WgXcQ) of Never Gonna Give you up
+        - **Random SSID**
+          Creates many Random SSIDs
+      - **Deauth Flood**
+        Spams Deauth so everyone connected gets instantly kicked out
+    - ### Evil Portal
+         - **Default**
+          Creates a simple Evil Portal where the victim needs to log in with "Google". If a Victim enters their Email and Password it will show up like this:
+          
+            <details>
+               <summary>Image</summary>
+    
+           ![IMG_4822](https://github.com/user-attachments/assets/bbce7189-c6fe-4645-8ab8-39b3664927b4)
+    
+           </details>
+
+        - If your device has an SD Card reader with a FAT filesystem formatted card inserted, the usernames and passwords will be logged to Bruce_creds.csv on the SD Card for you to peruse later.        
+         - **Custom HTML**
+           Creates an Evil Portal with custom UI, i.e. Public Free Wifis, that you can load onto your M5Stick via WebUI
+
+    - ### Reverse Shell
+        - Create a **[Reverse shell](https://www.imperva.com/learn/application-security/reverse-shell/)**
+          
+          **1. Setup**
+           - Go to `WiFi>Reverse Shell` and start the "Reverse Shell Mode" in Bruce.
+           - Start and Wait for the BruceC2 to connect.
+           - Use the BadUSB option to install a Script on the Victims Computer
+          
+          **2. Usage**
+           - Navigate to the web server (http://192.168.4.1) using your browser.
+           - Use the interface to monitor the connection status or execute shell commands.
+
+          **3. Commands**
+          
+          `exit`: Disconnect the ESP32 and terminate the session.
+          
+          `clear`: Clear the terminal on the server side.
+          
+          `B:<command>`: Execute a Bash command on the server (e.g., B:ls).
+          
+          `PS:<command>`: Execute a PowerShell command on the server (e.g., PS:Get-Process).
+          
+          `showConsole`: Show the console output in BruceC2.
+          
+          `hideConsole`: Hide the console output in BruceC2.
+   - ### Tellnet
+     - Connect to [TelNet](https://www.geeksforgeeks.org/introduction-to-telnet/) servers and execute remote commands.
+   - ### SSH
+     - Connect to [SSH](https://info.support.huawei.com/info-finder/encyclopedia/en/SSH.html) servers and execute remote commands.
+   - ### DPWO
+     - [DPWO](https://github.com/caioluders/DPWO) (Default Password Wifi Owner) is a tool that automatically discover passwords of nearby WiFi networks. This is possible due to the default password schemas used by Brazilian internet providers (NET, VIVO, GVT, etc).
+   - ### Raw Sniffer
+     - A Tool that captures and saves raw wireless network data, it will save in `.pcap` format which can be opened in [Wireshark](https://www.wireshark.org/download.html)
+   - ### Scan Hosts
+     - Scan and See what devices are connected to a wifi by scanning and selecting the network, the devices will appear in IP adress form.
+     - After going to `WiFi>ScanHost>SelectIP>` there are 4 different options:
+       
+       - **SSH Connect**
+         Tries connecting into the Host by using SSH
+         
+       - **Station Deauth**
+         Spams Deauth Frames to the selected device
+         
+       - **[ARP](https://www.geeksforgeeks.org/how-address-resolution-protocol-arp-works/) Spoofing**
+         Sends fake ARP Resonses to the host and to the Gateway, provoking communication interruption. this is the fist step of a [Man-In-The-Middle attack using the 2nd OSI layer vulnerability](https://www.valencynetworks.com/articles/cyber-attacks-explained-man-in-the-middle-attack.html).
+         
+       - **[ARP](https://www.geeksforgeeks.org/how-address-resolution-protocol-arp-works/) Poisoning**
+         Sends fake ARP (Address Resolution Protocol) responses to all hosts and to the gateway with random MAC addresses. It can possibly cause CAOS in the network, as all devices won't find the gateway to communicate.
+
+    - ### WireGuard
+      [WireGuard tunneling](https://nordlayer.com/learn/vpn/wireguard/) is a modern, fast, and secure VPN protocol that creates encrypted tunnels for securely transmitting data over the internet.
+
+      - Use it by going to `WiFi>WireGuard>SelectYourWiFi` then select your preffered WiFi and your connected
+
+      - **Disconnect** by going to `WiFi>Disconnect` click on Disconnect
+
+____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
 
 ## 🔧 Official M5stack Modules
 
-- [**M5Stack FM Receiver**](https://www.aliexpress.us/item/3256803111064973.html?aff_fcid=b9d7840bfc0c450897368406859f5cdc-1734271698334-04109-_DdvzW8h&tt=CPS_NORMAL&aff_fsk=_DdvzW8h&aff_platform=shareComponent-detail&sk=_DdvzW8h&aff_trace_key=b9d7840bfc0c450897368406859f5cdc-1734271698334-04109-_DdvzW8h&terminal_id=ec4331db37424feaa5a63d422bee1666&afSmartRedirect=y&gatewayAdapt=glo2usa4itemAdapt) (Receive Different Signals, i.e. Receive Car key Signal **Warning! Educational Purpose Only!**)
-- [**M5Stack FM Transmitter**](https://www.aliexpress.us/item/3256803111130499.html?aff_fcid=6d604ea874f84735b5fe73f6e36d8d01-1734271704602-02749-_DlhHGw5&tt=CPS_NORMAL&aff_fsk=_DlhHGw5&aff_platform=shareComponent-detail&sk=_DlhHGw5&aff_trace_key=6d604ea874f84735b5fe73f6e36d8d01-1734271704602-02749-_DlhHGw5&terminal_id=ec4331db37424feaa5a63d422bee1666&afSmartRedirect=y&gatewayAdapt=glo2usa4itemAdapt) (Transmitt Diffrent Signals i.e. Use the received Car key SIgnal **Warning! Educational Purpose Only!**)
-- [**M5Stack IR Module**](https://www.aliexpress.us/item/3256806277070733.html?aff_fcid=2ee3c6959d494fbb93e9abc8c99fb79e-1734271705699-05822-_DFhWFNB&tt=CPS_NORMAL&aff_fsk=_DFhWFNB&aff_platform=shareComponent-detail&sk=_DFhWFNB&aff_trace_key=2ee3c6959d494fbb93e9abc8c99fb79e-1734271705699-05822-_DFhWFNB&terminal_id=ec4331db37424feaa5a63d422bee1666&afSmartRedirect=y&gatewayAdapt=glo2usa4itemAdapt) (Get more IR range i.e. Turn off TVs from a longe range)
-- [**M5Stack RFID2**](https://www.aliexpress.us/item/3256803294601566.html?aff_fcid=e127d93cab124003939204a0b992be18-1734271706832-05764-_DEGMyCv&tt=CPS_NORMAL&aff_fsk=_DEGMyCv&aff_platform=shareComponent-detail&sk=_DEGMyCv&aff_trace_key=e127d93cab124003939204a0b992be18-1734271706832-05764-_DEGMyCv&terminal_id=ec4331db37424feaa5a63d422bee1666&afSmartRedirect=y&gatewayAdapt=glo2usa4itemAdapt) (Read/Clone/Copy tags i.e. Clone House Key tag **Warning! Educational Purpose Only!**)
+- [**M5Stack FM Receiver**](https://s.click.aliexpress.com/e/_omN07yd) (Receive Different Signals, i.e. Receive Car key Signal **Warning! Educational Purpose Only!**)
+- [**M5Stack FM Transmitter**](https://s.click.aliexpress.com/e/_ooJOihT) (Transmitt Diffrent Signals i.e. Use the received Car key SIgnal **Warning! Educational Purpose Only!**)
+- [**M5Stack IR Module**](https://s.click.aliexpress.com/e/_olQWFCl) (Get more IR range i.e. Turn off TVs from a longe range)
+- [**M5Stack RFID2**](https://s.click.aliexpress.com/e/_oDytw1x) (Read/Clone/Copy tags i.e. Clone House Key tag **Warning! Educational Purpose Only!**)
 
 ## 🔧 Unofficial M5stack Modules
 
-- [**CC1101**](https://de.aliexpress.com/item/1005004333776584.html?businessType=ProductDetail&srcSns=sns_Copy&spreadType=socialShare&bizType=ProductDetail&social_params=60906761349&aff_fcid=c972a1490b2b4101ae7fffbfd0fe7897-1734271394437-05997-_EzBvF1e&tt=CPS_NORMAL&aff_fsk=_EzBvF1e&aff_platform=shareComponent-detail&sk=_EzBvF1e&aff_trace_key=c972a1490b2b4101ae7fffbfd0fe7897-1734271394437-05997-_EzBvF1e&shareId=60906761349&businessType=ProductDetail&platform=AE&terminal_id=ec4331db37424feaa5a63d422bee1666&gatewayAdapt=glo2deu) (External Antenna for more range and more powerfull jamming **Warning! Educational Purpose Only!**)
-- [**NRF24L01**](https://de.aliexpress.com/item/1005006179466246.html?businessType=ProductDetail&srcSns=sns_Copy&spreadType=socialShare&bizType=ProductDetail&social_params=60906809295&aff_fcid=9b35110bf51a4f8e9a2b12b9ab9df5cf-1734271398149-04082-_EIjrOjA&tt=CPS_NORMAL&aff_fsk=_EIjrOjA&aff_platform=shareComponent-detail&sk=_EIjrOjA&aff_trace_key=9b35110bf51a4f8e9a2b12b9ab9df5cf-1734271398149-04082-_EIjrOjA&shareId=60906809295&businessType=ProductDetail&platform=AE&terminal_id=ec4331db37424feaa5a63d422bee1666&gatewayAdapt=glo2deu) (External Antenna for more range and more powerfull jamming **Warning! Educational Purpose Only!**)
-- [**CH9329**](https://de.aliexpress.com/item/1005007511100935.html?businessType=ProductDetail&srcSns=sns_Copy&spreadType=socialShare&bizType=ProductDetail&social_params=60901460840&aff_fcid=62e5a8673bb347aeb4160e058404ccda-1734271399162-04234-_EvYgKtS&tt=CPS_NORMAL&aff_fsk=_EvYgKtS&aff_platform=shareComponent-detail&sk=_EvYgKtS&aff_trace_key=62e5a8673bb347aeb4160e058404ccda-1734271399162-04234-_EvYgKtS&shareId=60901460840&businessType=ProductDetail&platform=AE&terminal_id=ec4331db37424feaa5a63d422bee1666&gatewayAdapt=glo2deu) (USB Port)
-- [**SD Reader**](https://de.aliexpress.com/item/1005006247350757.html?aff_fcid=7b0c51d1535043b1843dd3a4409325bb-1734271400283-06554-_DBKndJx&tt=CPS_NORMAL&aff_fsk=_DBKndJx&aff_platform=shareComponent-detail&sk=_DBKndJx&aff_trace_key=7b0c51d1535043b1843dd3a4409325bb-1734271400283-06554-_DBKndJx&terminal_id=ec4331db37424feaa5a63d422bee1666&afSmartRedirect=y) (SD Reader For more storage. Default one only has 8MB)
-- [**SI4713**](https://www.aliexpress.us/item/3256805591067924.html?businessType=ProductDetail&srcSns=sns_Copy&spreadType=socialShare&bizType=ProductDetail&social_params=60904598631&aff_fcid=01c9dc6d50184543bbff6edc5e357202-1734271402053-01108-_EuYAdMy&tt=CPS_NORMAL&aff_fsk=_EuYAdMy&aff_platform=shareComponent-detail&sk=_EuYAdMy&aff_trace_key=01c9dc6d50184543bbff6edc5e357202-1734271402053-01108-_EuYAdMy&shareId=60904598631&businessType=ProductDetail&platform=AE&terminal_id=ec4331db37424feaa5a63d422bee1666&gatewayAdapt=glo2usa) (Basically a FM Transmitter)
-- [**RFID/NFC PN532**](https://de.aliexpress.com/item/1005007476486157.html?spm=a2g0o.productlist.main.1.61633020Ha0DBm&algo_pvid=9501c714-31e0-4581-a94f-b2f3cc2fcacb&utparam-url=scene%3Asearch%7Cquery_from%3A) (NFC Reader and Writer)
-- [**RFID RC522**](https://de.aliexpress.com/item/1005005995095290.html?spm=a2g0o.productlist.main.1.794f2464xkRKqY&algo_pvid=ef965346-5fff-4657-a9b2-f8223d488325&utparam-url=scene%3Asearch%7Cquery_from%3A) (SPI Reader and Writer)
-- [**IR Transmitter/Receiver**](https://de.aliexpress.com/item/1005007728215137.html?spm=a2g0o.productlist.main.3.4f472a2098sAMY&algo_pvid=6a5434b0-1b79-450b-a8ef-d571552aaf0c&utparam-url=scene%3Asearch%7Cquery_from%3A) (More IR Range 10m)
+- [**CC1101**](https://s.click.aliexpress.com/e/_om9uBlJ) (External Antenna for more range and more powerfull jamming **Warning! Educational Purpose Only!**)
+- [**NRF24L01**](https://s.click.aliexpress.com/e/_oCg9cPR) (External Antenna for more range and more powerfull jamming **Warning! Educational Purpose Only!**)
+- [**CH9329**](https://s.click.aliexpress.com/e/_onS3X9R) (USB Port)
+- [**SD Reader**](https://s.click.aliexpress.com/e/_oECUXah) (SD Reader For more storage. Default one only has 8MB)
+- [**SI4713**](https://s.click.aliexpress.com/e/_onSFnLx) (Basically a FM Transmitter)
+- [**RFID/NFC PN532**](https://s.click.aliexpress.com/e/_oF72TlJ) (NFC Reader and Writer)
+- [**RFID RC522**](https://s.click.aliexpress.com/e/_oB6vkSV) (SPI Reader and Writer)
+- [**IR Transmitter/Receiver**](https://s.click.aliexpress.com/e/_oF00QaH) (More IR Range 10m)
 
 ## ➕ Additional Stuff
 
-- [PCB Prototype](https://www.aliexpress.us/item/3256806052763508.html?spm=a2g0o.order_list.order_list_main.11.43ca5e5b1u4qqL&aff_fcid=04079b811578485ab8b3c19a9c1d4083-1734274480098-00809-_DFCCeE5&tt=CPS_NORMAL&aff_fsk=_DFCCeE5&aff_platform=portals-tool&sk=_DFCCeE5&aff_trace_key=04079b811578485ab8b3c19a9c1d4083-1734274480098-00809-_DFCCeE5&terminal_id=ec4331db37424feaa5a63d422bee1666&afSmartRedirect=y&gatewayAdapt=fra2usa4itemAdapt)
-- [Wires](https://www.aliexpress.us/item/3256803454873245.html?businessType=ProductDetail&srcSns=sns_Copy&spreadType=socialShare&bizType=ProductDetail&social_params=60906813246&aff_fcid=ec5e4fbca32548d881858d95eac50b1b-1734274481207-03197-_Exj1feg&tt=CPS_NORMAL&aff_fsk=_Exj1feg&aff_platform=shareComponent-detail&sk=_Exj1feg&aff_trace_key=ec5e4fbca32548d881858d95eac50b1b-1734274481207-03197-_Exj1feg&shareId=60906813246&businessType=ProductDetail&platform=AE&terminal_id=ec4331db37424feaa5a63d422bee1666&gatewayAdapt=glo2usa4itemAdapt) (Female & Male Wires to connect Modules)
-- [Needel Headers](https://www.aliexpress.us/item/3256806596801005.html?spm=a2g0o.order_list.order_list_main.17.43ca5e5b1u4qqL&aff_fcid=2b6b8f93342b4dde89421c5041e12dd7-1734274482745-05649-_DCfiTkV&tt=CPS_NORMAL&aff_fsk=_DCfiTkV&aff_platform=portals-tool&sk=_DCfiTkV&aff_trace_key=2b6b8f93342b4dde89421c5041e12dd7-1734274482745-05649-_DCfiTkV&terminal_id=ec4331db37424feaa5a63d422bee1666&afSmartRedirect=y&gatewayAdapt=fra2usa4itemAdapt)
-- [SD Cards](https://www.aliexpress.us/item/3256805307825732.html?spm=a2g0o.order_list.order_list_main.28.43ca5e5b1u4qqL&aff_fcid=4c4c85ea16ff4d9381368135a4cf5808-1734274484158-07310-_DnS6Hkl&tt=CPS_NORMAL&aff_fsk=_DnS6Hkl&aff_platform=portals-tool&sk=_DnS6Hkl&aff_trace_key=4c4c85ea16ff4d9381368135a4cf5808-1734274484158-07310-_DnS6Hkl&terminal_id=ec4331db37424feaa5a63d422bee1666&afSmartRedirect=y&gatewayAdapt=fra2usa4itemAdapt) (Up to 256GB SD cards)
+- [PCB Prototype](https://s.click.aliexpress.com/e/_olxA3S1)
+- [Wires](https://s.click.aliexpress.com/e/_okHoOCh) (Female & Male Wires to connect Modules)
+- [Needel Headers 1](https://s.click.aliexpress.com/e/_oEuUgrr)
+- [Needel Headers 2](https://s.click.aliexpress.com/e/_olYspJ3)
+- [SD Cards](https://s.click.aliexpress.com/e/_olEWviv) (Up to 256GB SD cards)
 
-## 💡 Tutorials
 
-Coming soon!
+BlE, IR, RF, RFID, FM & Others coming soon!
 
 **Bruce [Discord](https://discord.com/invite/WJ9XF9czVT)**
 
