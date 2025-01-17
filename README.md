@@ -214,6 +214,14 @@ ________________________________________________________________________________
       - Use it by going to `WiFi>WireGuard>SelectYourWiFi` then select your preffered WiFi and your connected
 
       - **Disconnect** by going to `WiFi>Disconnect` click on Disconnect
+    - ### Brucegotchi
+      Is like the name says basically a Tamagotchi but for Bruce wich does things like
+      
+      - Pwngrid spam (SSID spam)
+
+      - Deauth nearby WiFi networks in different channels
+        
+      - Collect and save [HandShakes (EAPOL)](https://www.wifi-professionals.com/2019/01/4-way-handshake), can be used to crack WiFi Passwords
 
 ____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
 
