@@ -225,6 +225,85 @@ ________________________________________________________________________________
 
 ____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
 
+- ## 📶 BLE
+
+  - ### Disconnect
+    Disconnect connected Device
+    
+  - ### Media Cmds
+    
+    Execute commands and control your smartphone’s media functions
+    
+    Start Media Cmds Mode and connect the target device with the M5Stick, wich will show up as Bluetooth Keyboard
+
+       - Screenshot
+       - Play / Pause
+       - Stop
+       - Next Track
+       - Prev Track
+       - Volume + / -
+       - Mute
+  
+  - ### BLE Scan
+    Scan for nearby Bluetooth Low Energy ([BLE](https://www.techtarget.com/iotagenda/definition/Bluetooth-Low-Energy-Bluetooth-LE)) devices
+
+  - ### Bad BLE
+    Simulate a wireless keyboard to deploy DuckyScripts (Scripts that are desigend to run on a [Rubber Ducky](https://de.wikipedia.org/wiki/Rubber_Ducky) USB stick) to paired devices. You can also use custom scripts.
+    Iportant:
+
+    - The device must be previously paired for this feature to work
+    - After disconnecting BLE, you need to restart the device to enable this functionality again
+
+  - ### iOS Spam
+    This feature used to work and spam Bluetooth pairing to any iOS device, but it got patched and now it doesn't work anymore.
+
+  - ### Windows Spam
+    Spam Windows devices with SwiftPair Notifications
+
+  - ### Samsung Spam
+    Spam Samsung devices with Bluetooth pairing Notifications
+
+  - ### Android Spam
+    Spam Android devices with Bluetooth pairing Notifications
+
+  - ### Spam All
+    Spam all supported devices at once
+
+____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+- ## ♒ RF
+  - ### Scan/Copy
+    Scan and Copy [RF](https://www.synopsys.com/glossary/what-is-rf-circuit-design.html) Signals
+
+  - ## Custom SubGhz
+    Send custom SubGhz Signals to certain things for example Gates, Ceiling Fans and more.
+
+  - ## Spectrum
+    See the active RF Signals in a spectrum form
+
+  - ## SquareWave Spectrum
+    See the active RF Signals in a Squarewave spectrum form
+
+  - ## Jammer Itmt (Intermittent)
+    Jams and creates **"gaps"** in the communication channel by jamming for short bursts, leaving brief periods where communication might still be possible.
+ 
+  - ## Jammer Full
+    Jams and creates **constant** noise or interference, effectively blocking all communication within the targeted frequency.
+ 
+  - ## Config
+    - ### RF TX Pin
+      
+    - ### RF RX Pin
+      
+    - ### RF Module
+      Check if your RF Module is connected and if its working
+      
+    - ### RF Frequency
+      Change the RF Frequency to a custom one
+
+____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+IR, RFID, FM & Others coming soon!
 
 ## 🔧 Official M5stack Modules
 
@@ -253,7 +332,7 @@ ________________________________________________________________________________
 - [SD Cards](https://s.click.aliexpress.com/e/_olEWviv) (Up to 256GB SD cards)
 
 
-BlE, IR, RF, RFID, FM & Others coming soon!
+
 
 **Bruce [Discord](https://discord.com/invite/WJ9XF9czVT)**
 
